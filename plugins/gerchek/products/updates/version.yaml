@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table gerchek_products_products'
+    - builder_table_create_gerchek_products_products.php
+1.0.3:
+    - 'Created table gerchek_products_categories'
+    - builder_table_create_gerchek_products_categories.php
+1.0.4:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products.php
+1.0.5:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_2.php
+1.0.6:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_3.php

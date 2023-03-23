@@ -1,0 +1,4 @@
+title: CategoryController
+modelClass: Gerchek\Products\Models\Category
+toolbar:
+    buttons: reorder_toolbar

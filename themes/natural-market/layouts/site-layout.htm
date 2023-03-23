@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from themesdesign.in/medroc/layouts/ecommerce-product-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2022 11:30:43 GMT -->
+<head>
+    
+    <meta charset="utf-8" />
+    <title>Product Detail | Medroc - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesdesign" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/icons.min.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/app.min.css'|theme }}" rel="stylesheet">
+{% styles %}
+</head>
+
+<body data-topbar="dark">
+    
+<!-- <body data-layout="horizontal" data-topbar="dark"> -->
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        
+        
+        {% partial "header" %}
+        {% partial "vertical-menu" %}
+
+        
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <h4 class="mb-0">Product Detail</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
+                                        <li class="breadcrumb-item active">Product Detail</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+
+            {% page %}
+            {% partial "footer" %}
+            
+            
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ 'assets/libs/jquery/jquery.min.js'|theme }}"></script>
+    <script src="{{ 'assets/libs/bootstrap/js/bootstrap.bundle.min.js'|theme }}"></script>
+    <script src="{{ 'assets/libs/metismenu/metisMenu.min.js'|theme }}"></script>
+    <script src="{{ 'assets/libs/simplebar/simplebar.min.js'|theme }}"></script>
+    <script src="{{ 'assets/libs/node-waves/waves.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/app.js'|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+
+</body>
+
+<!-- Mirrored from themesdesign.in/medroc/layouts/ecommerce-product-detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2022 11:30:43 GMT -->
+</html>

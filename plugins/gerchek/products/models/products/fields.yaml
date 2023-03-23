@@ -1,0 +1,55 @@
+fields:
+    name:
+        label: Name
+        span: left
+        type: text
+    description:
+        label: Description
+        size: huge
+        span: left
+        type: textarea
+    images:
+        label: Images
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: right
+        type: fileupload
+    compound:
+        label: состав
+        span: left
+        type: text
+    manufacture:
+        label: manufacture
+        span: right
+        type: text
+    price:
+        label: price
+        span: auto
+        type: number
+    discount:
+        label: discount
+        span: auto
+        type: number
+    on_discount:
+        label: skidka
+        span: auto
+        type: switch
+    fresh:
+        label: fresh
+        span: left
+        type: switch
+    farmer:
+        label: Farmer
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    category:
+        label: category_id
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation

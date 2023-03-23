@@ -1,0 +1,12 @@
+list: $/gerchek/products/models/products/columns.yaml
+modelClass: Gerchek\Products\Models\Products
+title: ProductController
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'gerchek/products/productcontroller/update/:id'

@@ -1,0 +1,124 @@
+url = "/profile"
+layout = "site-layout"
+title = "Profile"
+
+[session]
+security = "all"
+redirect = "register"
+==
+<?php
+function onStart()
+{
+    if (!Auth::check()) {
+        // Redirect the user to another page
+        return Redirect::to('/register');
+    }
+    $user = Auth::getUser();
+    //dd($user);
+    if ($user) {
+        $this['avatarPath'] = $user->getAvatarThumb(100, 100);
+    }
+}
+?>
+==
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <div class="product-detail">
+                            <div class="row">
+                                <div class="col-md-10 col-9">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade show active" id="product-5" role="tabpanel">
+                                            <div class="product-img">
+                                                <img src="{{ avatarPath }}" alt="img-1" class="img-fluid mx-auto d-block" data-zoom="assets/images/product/img-5.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row text-center mt-2">
+                                        <div class="col-sm-6">
+                                            <div class="d-grid">
+                                                <a data-request="onLogout" data-request-data="redirect: '/register'" class="btn btn-primary waves-effect waves-light mt-2">Sign out</a>
+                                                <!-- <button type="button" class="btn btn-primary waves-effect waves-light mt-2"> -->
+                                                <!-- <i class="mdi mdi-cart me-2"></i> Add to cart -->
+                                                
+                                            </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end product img -->
+                    </div>
+                    <div class="col-xl-8">
+                        <h5 class="font-size-14 mb-3">User data: </h5>
+                        <div class="product-desc">
+                            <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link" id="desc-tab" data-bs-toggle="tab" href="#desc" role="tab">Description</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link active" id="specifi-tab" data-bs-toggle="tab" href="#specifi" role="tab">Specifications</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content border border-top-0 p-4">
+                                <div class="tab-pane fade" id="desc" role="tabpanel">
+                                    <div>
+                                        <p>If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual </p>
+                                        <p>To achieve this, it would be necessary to have uniform grammar, pronunciation and more common several languages coalesce, the grammar of the resulting.</p>
+                                        <p>It will be as simple as occidental in fact.</p>
+    
+                                        <div>
+                                            <p class="mb-2"><i class="mdi mdi-circle-medium me-1 align-middle"></i> If several languages coalesce</p>
+                                            <p class="mb-2"><i class="mdi mdi-circle-medium me-1 align-middle"></i> To an English person, it will seem like simplified</p>
+                                            <p class="mb-0"><i class="mdi mdi-circle-medium me-1 align-middle"></i> These cases are perfectly simple.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade show active" id="specifi" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table table-nowrap mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" style="width: 400px;">Username</th>
+                                                    <td>{% if user %}
+                                                        <p>{{ user.name }}</p>
+                                                    {% else %}
+                                                        <p>Nobody is logged in</p>
+                                                    {% endif %}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Brand</th>
+                                                    <td>Jack & Jones</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Color</th>
+                                                    <td>Black</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Material</th>
+                                                    <td>Steel</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Weight</th>
+                                                    <td>1.500 Kg</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
+</div>
+<!-- end row -->

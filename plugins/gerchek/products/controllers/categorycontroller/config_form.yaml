@@ -1,0 +1,10 @@
+name: CategoryController
+form: $/gerchek/products/models/category/fields.yaml
+modelClass: Gerchek\Products\Models\Category
+defaultRedirect: gerchek/products/categorycontroller
+create:
+    redirect: 'gerchek/products/categorycontroller/update/:id'
+    redirectClose: gerchek/products/categorycontroller
+update:
+    redirect: gerchek/products/categorycontroller
+    redirectClose: gerchek/products/categorycontroller

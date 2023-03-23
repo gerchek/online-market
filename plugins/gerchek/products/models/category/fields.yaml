@@ -1,0 +1,5 @@
+fields:
+    name:
+        label: 'Category name'
+        span: auto
+        type: text

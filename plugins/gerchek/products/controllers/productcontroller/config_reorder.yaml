@@ -1,0 +1,4 @@
+title: ProductController
+modelClass: Gerchek\Products\Models\Products
+toolbar:
+    buttons: reorder_toolbar

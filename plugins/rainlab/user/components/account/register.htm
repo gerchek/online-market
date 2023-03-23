@@ -1,4 +1,4 @@
-{% if canRegister %}
+<!-- {% if canRegister %}
     <h3>Register</h3>
 
     {{ form_ajax('onRegister') }}
@@ -48,6 +48,52 @@
         <button type="submit" class="btn btn-default">Register</button>
 
     {{ form_close() }}
-{% else %}
+{% else %} -->
     <!-- Registration is disabled. -->
-{% endif %}
+<!-- {% endif %} -->
+
+<!-- -------------------------------------------------------------------------------------------------------- -->
+
+
+                            {% if canRegister %}
+                            {{ form_ajax('onRegister') }}
+                            <!-- <form class="form-horizontal" action="https://themesdesign.in/medroc/layouts/index.html"> -->
+                                <div class="form-horizontal">
+                                    <div class="mb-3">
+                                        <label for="useremail">Email</label>
+                                        <input type="email" class="form-control" id="useremail" placeholder="Enter email" name="email">        
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="username">Full Name</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter username" name="name">
+                                    </div>
+                                    {% if loginAttribute == "username" %}
+                                    <div class="mb-3">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                                    </div>
+                                    {% endif %}
+                                    <div class="mb-3">
+                                        <label for="userpassword">Password</label>
+                                        <input type="password" class="form-control" id="userpassword" placeholder="Enter password" name="password">        
+                                    </div>
+                                    
+
+                                    <div class="mt-4">
+                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Register</button>
+                                    </div>
+
+                                    <div class="mt-4 text-center">
+                                        <p class="mb-0">By registering you agree to the Medroc <a href="#" class="text-primary">Terms of Use</a></p>
+                                    </div>
+                                </div>
+                                
+                            <!-- </form> -->
+                            {{ form_close() }}
+                            {% else %}
+                            <!-- Registration is disabled. -->
+                        {% endif %}
+
+
+<!-- Mirrored from themesdesign.in/medroc/layouts/auth-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Mar 2022 11:31:32 GMT -->

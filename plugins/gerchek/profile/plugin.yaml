@@ -1,0 +1,6 @@
+plugin:
+    name: 'gerchek.profile::lang.plugin.name'
+    description: 'gerchek.profile::lang.plugin.description'
+    author: Gerchek
+    icon: oc-icon-adjust
+    homepage: ''

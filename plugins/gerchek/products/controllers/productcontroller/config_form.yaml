@@ -1,0 +1,10 @@
+name: ProductController
+form: $/gerchek/products/models/products/fields.yaml
+modelClass: Gerchek\Products\Models\Products
+defaultRedirect: gerchek/products/productcontroller
+create:
+    redirect: 'gerchek/products/productcontroller/update/:id'
+    redirectClose: gerchek/products/productcontroller
+update:
+    redirect: gerchek/products/productcontroller
+    redirectClose: gerchek/products/productcontroller
