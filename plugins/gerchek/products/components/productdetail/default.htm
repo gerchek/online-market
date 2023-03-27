@@ -1,0 +1,102 @@
+{% set product = __SELF__.product %}
+<div class="card-body">
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#carouselExampleFade" data-bs-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        {% for image in product[0].images %}
+                                        <div class="carousel-item {% if loop.first %} active{% endif %}">
+                                            <img class="d-block img-fluid" src="{{ image.path }}" alt="First slide">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: red;"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next" >
+                                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: red;"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end product img -->
+        </div>
+        <div class="col-xl-8">
+            <div class="mt-4 mt-xl-3">
+                <a href="#" class="text-primary">{{ product[0].name }}</a>
+                <h5 class="mt-1 mb-3">{{ product[0].manufacture }}</h5>
+
+                <div class="d-inline-flex">
+                    <div class="text-muted me-3">
+                        <span class="mdi mdi-star text-warning"></span>
+                        <span class="mdi mdi-star text-warning"></span>
+                        <span class="mdi mdi-star text-warning"></span>
+                        <span class="mdi mdi-star text-warning"></span>
+                        <span class="mdi mdi-star"></span>
+                    </div>
+                    <div class="text-muted">( 132 )</div>
+                </div>
+                
+                <h5 class="mt-2"><del class="text-muted me-2">{{ product[0].price }}</del>{{ product[0].discount }} <span class="text-danger font-size-12 ms-2">25 % Off</span></h5>
+                <p class="mt-3">{{ product[0].description }}</p>
+                <hr class="my-4">
+
+                <div class="row">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="mt-4">
+        <h5 class="font-size-14 mb-3">Product description: </h5>
+        <div class="product-desc">
+            <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" id="desc-tab" data-bs-toggle="tab" href="#desc" role="tab">Description</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" id="specifi-tab" data-bs-toggle="tab" href="#specifi" role="tab">Specifications</a>
+                </li>
+            </ul>
+            <div class="tab-content border border-top-0 p-4">
+                <div class="tab-pane fade" id="desc" role="tabpanel">
+                    <div>
+                        <p>{{ product[0].description }}</p>
+                    </div>
+                </div>
+                <div class="tab-pane fade show active" id="specifi" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-nowrap mb-0">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 400px;">Category</th>
+                                    <td>{{ product[0].category.name }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

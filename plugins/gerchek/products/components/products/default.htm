@@ -41,8 +41,8 @@
                         {{ product.created_at }}
                     </td>
                     <td id="tooltip-container1">
+                        <a href="{{ 'product-detail'|page({ product_id: product.id }) }}" class="btn btn-info waves-effect waves-light"title="View">View</a>
                         <a href="{{ 'product_update'|page({ product_id: product.id }) }}" class="btn btn-primary waves-effect waves-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">Edit</a>
-                        <!-- <a href="javascript:void(0);" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="mdi mdi-trash-can font-size-18"></i></a> -->
                         <button
                             class="btn btn-danger"
                             data-request="onDelete"

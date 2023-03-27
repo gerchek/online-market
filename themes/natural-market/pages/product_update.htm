@@ -4,6 +4,36 @@ title = "product_update"
 
 [ProductUpdate]
 ==
+<?php
+function onStart()
+{
+    if (!Auth::check()) {
+        return Redirect::to('/register');
+    }
+    $user = Auth::getUser();
+    //dd($user);
+    $groups = $user->getGroups();
+
+    $groupCode = 'farmer';
+    $inGroup = false;
+
+    foreach ($groups as $group) {
+        if ($group->code == $groupCode) {
+            $inGroup = true;
+            break;
+        }
+    }
+
+    if (!$inGroup) {
+        Auth::logout();
+        return Redirect::to('/register');
+    }
+
+
+
+}
+?>
+==
 <style>
 @charset "UTF-8";
 html * {

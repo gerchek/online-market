@@ -9,7 +9,8 @@ class Plugin extends PluginBase
         return [
             \Gerchek\Products\Components\ProductCreate::class => 'productCreate',
             \Gerchek\Products\Components\ProductUpdate::class => 'ProductUpdate',
-            \Gerchek\Products\Components\Products::class => 'Products'
+            \Gerchek\Products\Components\Products::class => 'Products',
+            \Gerchek\Products\Components\ProductDetail::class => 'ProductDetail'
         ];
     }
 
