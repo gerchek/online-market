@@ -42,7 +42,8 @@ class Session extends ComponentBase
                 'options'     => [
                     'all'   => 'rainlab.user::lang.session.all',
                     'user'  => 'rainlab.user::lang.session.users',
-                    'guest' => 'rainlab.user::lang.session.guests'
+                    'guest' => 'rainlab.user::lang.session.guests',
+                    'farmer' => 'rainlab.user::lang.session.farmer'
                 ]
             ],
             'allowedUserGroups' => [

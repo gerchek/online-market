@@ -10,17 +10,44 @@ redirect = "register"
 function onStart()
 {
     if (!Auth::check()) {
-        // Redirect the user to another page
         return Redirect::to('/register');
     }
     $user = Auth::getUser();
     //dd($user);
+    $groups = $user->getGroups();
+
+    $groupCode = 'farmer';
+    $inGroup = false;
+
+    foreach ($groups as $group) {
+        if ($group->code == $groupCode) {
+            $inGroup = true;
+            break;
+        }
+    }
+
+    if (!$inGroup) {
+        Auth::logout();
+        return Redirect::to('/register');
+    }
+
+
+
     if ($user) {
         $this['avatarPath'] = $user->getAvatarThumb(100, 100);
     }
 }
 ?>
 ==
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">User data</h4>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
 <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -55,28 +82,19 @@ function onStart()
                         <!-- end product img -->
                     </div>
                     <div class="col-xl-8">
-                        <h5 class="font-size-14 mb-3">User data: </h5>
                         <div class="product-desc">
                             <ul class="nav nav-tabs nav-tabs-custom" role="tablist">
                                 <li class="nav-item">
                                   <a class="nav-link" id="desc-tab" data-bs-toggle="tab" href="#desc" role="tab">Description</a>
                                 </li>
                                 <li class="nav-item">
-                                  <a class="nav-link active" id="specifi-tab" data-bs-toggle="tab" href="#specifi" role="tab">Specifications</a>
+                                  <a class="nav-link active" id="specifi-tab" data-bs-toggle="tab" href="#specifi" role="tab">данные для фермера</a>
                                 </li>
                             </ul>
                             <div class="tab-content border border-top-0 p-4">
                                 <div class="tab-pane fade" id="desc" role="tabpanel">
                                     <div>
-                                        <p>If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual </p>
-                                        <p>To achieve this, it would be necessary to have uniform grammar, pronunciation and more common several languages coalesce, the grammar of the resulting.</p>
-                                        <p>It will be as simple as occidental in fact.</p>
-    
-                                        <div>
-                                            <p class="mb-2"><i class="mdi mdi-circle-medium me-1 align-middle"></i> If several languages coalesce</p>
-                                            <p class="mb-2"><i class="mdi mdi-circle-medium me-1 align-middle"></i> To an English person, it will seem like simplified</p>
-                                            <p class="mb-0"><i class="mdi mdi-circle-medium me-1 align-middle"></i> These cases are perfectly simple.</p>
-                                        </div>
+                                        <p>резервный данный для фермера</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade show active" id="specifi" role="tabpanel">
@@ -85,27 +103,24 @@ function onStart()
                                             <tbody>
                                                 <tr>
                                                     <th scope="row" style="width: 400px;">Username</th>
-                                                    <td>{% if user %}
-                                                        <p>{{ user.name }}</p>
-                                                    {% else %}
-                                                        <p>Nobody is logged in</p>
-                                                    {% endif %}</td>
+                                                    <td>{{ user.name }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">Brand</th>
-                                                    <td>Jack & Jones</td>
+                                                    <th scope="row">Email </th>
+                                                    <td>{{ user.email }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="row">Color</th>
-                                                    <td>Black</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Material</th>
-                                                    <td>Steel</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Weight</th>
-                                                    <td>1.500 Kg</td>
+                                                    <th scope="row">лучший фермер</th>
+                                                    <td>{% if user.best_farmer == true %}
+                                                        <button type="button" class="btn btn-success waves-effect waves-light">
+                                                            <i class="ri-check-line align-middle me-2"></i> вы лучший фермер
+                                                        </button>
+                                                        {% else %}
+                                                        <button type="button" class="btn btn-danger waves-effect waves-light">
+                                                            <i class="ri-close-line align-middle me-2"></i> вы не лучший фермер
+                                                        </button>
+                                                        {% endif %}
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>

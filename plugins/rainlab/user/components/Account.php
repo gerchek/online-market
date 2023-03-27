@@ -298,7 +298,7 @@ class Account extends ComponentBase
      */
     public function onRegister()
     {
-        // dd("hi");
+        
         try {
             if (!$this->canRegister()) {
                 throw new ApplicationException(Lang::get(/*Registrations are currently disabled.*/'rainlab.user::lang.account.registration_disabled'));
@@ -344,13 +344,18 @@ class Account extends ComponentBase
             /*
              * Register user
              */
+            
             Event::fire('rainlab.user.beforeRegister', [&$data]);
 
             $requireActivation = UserSettings::get('require_activation', true);
             $automaticActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_AUTO;
             $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
             $adminActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_ADMIN;
+            
             $user = Auth::register($data, $automaticActivation);
+            $group = \Rainlab\User\Models\UserGroup::where('code', 'farmer')->first();
+            $user->groups()->add($group);
+            $user->save(); 
 
             Event::fire('rainlab.user.register', [$user, $data]);
 
@@ -393,6 +398,21 @@ class Account extends ComponentBase
             else Flash::error($ex->getMessage());
         }
     }
+
+    // public function onAddGroup()
+    // {
+    //     // Call the parent implementation to perform default registration behavior
+    //     $result = parent::onRegister();
+
+    //     // Get the registered user's ID
+    //     $userId = $this->user->id;
+
+    //     // Add the desired groups to the registered user
+    //     $authManager = \RainLab\User\Facades\AuthManager::instance();
+    //     $authManager->addUserGroups($userId, ['group1', 'group2']);
+
+    //     return $result;
+    // }
 
     /**
      * Activate the user

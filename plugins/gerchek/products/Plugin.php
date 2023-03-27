@@ -6,6 +6,11 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+        return [
+            \Gerchek\Products\Components\ProductCreate::class => 'productCreate',
+            \Gerchek\Products\Components\ProductUpdate::class => 'ProductUpdate',
+            \Gerchek\Products\Components\Products::class => 'Products'
+        ];
     }
 
     public function registerSettings()

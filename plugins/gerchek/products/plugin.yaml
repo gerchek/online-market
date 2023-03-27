@@ -9,6 +9,8 @@ navigation:
         label: Products
         url: /
         icon: icon-shopping-cart
+        permissions:
+            - products
         sideMenu:
             side-menu-item:
                 label: Category
@@ -18,3 +20,7 @@ navigation:
                 label: Products
                 url: gerchek/products/productcontroller
                 icon: icon-shopping-cart
+permissions:
+    products:
+        tab: other
+        label: products

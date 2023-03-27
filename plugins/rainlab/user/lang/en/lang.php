@@ -227,6 +227,7 @@ return [
         'all' => 'All',
         'users' => 'Users',
         'guests' => 'Guests',
+        'farmer' => 'Farmer',
         'allowed_groups_title' => 'Allow groups',
         'allowed_groups_description' => 'Choose allowed groups or none to allow all groups',
         'redirect_title' => 'Redirect to',

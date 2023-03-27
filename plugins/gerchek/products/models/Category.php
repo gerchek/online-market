@@ -9,6 +9,9 @@ class Category extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
+    protected $jsonable = ['images'];
+
+    protected $fillable = ['user_id'];
 
     /**
      * @var string The database table used by the model.

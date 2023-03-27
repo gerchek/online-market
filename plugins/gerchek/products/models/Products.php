@@ -21,9 +21,20 @@ class Products extends Model
     public $rules = [
     ];
 
-    public $attachMany = [
-        'images' => 'System\Models\File'
-    ];
+    // public $attachMany = [
+    //     'images' => 'System\Models\File'
+    // ];
+
+    public $attachMany = ['images' => ['System\Models\File', 'delete' => 'true' ]];
+
+    public function afterDelete() {
+        foreach ($this->images as $image) {
+            $image->delete();
+        }
+        // foreach ($this->files as $file) {
+        //     $file->delete();
+        // }
+    }
 
     public $belongsTo = [
         'farmer' => 'RainLab\User\Models\User',
