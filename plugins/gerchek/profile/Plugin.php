@@ -16,12 +16,12 @@ class Plugin extends PluginBase
         UsersControllers::extendFormFields(function($form,$model,$context){
             $form->addTabFields([
                 'wallet' => [
-                    'label' => 'wallet',
+                    'label' => 'кошелек',
                     'type' => 'number',
                     'tab' => 'Profile'
                 ],
                 'best_farmer' => [
-                    'label' => 'wallet',
+                    'label' => 'лучший фермер',
                     'type' => 'switch',
                     'tab' => 'Profile'
                 ]
