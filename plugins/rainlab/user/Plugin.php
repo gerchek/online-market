@@ -71,7 +71,8 @@ class Plugin extends PluginBase
         return [
             \RainLab\User\Components\Session::class => 'session',
             \RainLab\User\Components\Account::class => 'account',
-            \RainLab\User\Components\ResetPassword::class => 'resetPassword'
+            \RainLab\User\Components\ResetPassword::class => 'resetPassword',
+            \RainLab\User\Components\ProfileUpdate::class => 'profileUpdate'
         ];
     }
 
