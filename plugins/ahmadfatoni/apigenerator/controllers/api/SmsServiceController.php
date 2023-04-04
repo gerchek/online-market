@@ -79,7 +79,8 @@ class SmsServiceController extends Controller
         try {
             //Проверяеть код
             if (!SmsVerify::where(['phone' => $request->get('phone'), 'code' => $request->get('code')])->first()) return ['status' => false];
-            return ['status' => true, 'phone' => $request->get('phone')];
+            $user = Users::where('phone', $request->get('phone'))->with(['addresses'])->orderBy('created_at', 'desc')->first();
+            return $user;
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
