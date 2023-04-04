@@ -1,0 +1,4 @@
+title: UsersController
+modelClass: Gerchek\Products\Models\Users
+toolbar:
+    buttons: reorder_toolbar

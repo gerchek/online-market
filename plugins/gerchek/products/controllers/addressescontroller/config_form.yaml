@@ -1,0 +1,10 @@
+name: AddressesController
+form: $/gerchek/products/models/addresses/fields.yaml
+modelClass: Gerchek\Products\Models\Addresses
+defaultRedirect: gerchek/products/addressescontroller
+create:
+    redirect: 'gerchek/products/addressescontroller/update/:id'
+    redirectClose: gerchek/products/addressescontroller
+update:
+    redirect: gerchek/products/addressescontroller
+    redirectClose: gerchek/products/addressescontroller

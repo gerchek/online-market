@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use AhmadFatoni\ApiGenerator\Helpers\Helpers;
 use Illuminate\Support\Facades\Validator;
 use Gerchek\Products\Models\SmsVerify;
+use Gerchek\Products\Models\Users;
 use GuzzleHttp\Client;
 class SmsServiceController extends Controller
 {
@@ -46,10 +47,16 @@ class SmsServiceController extends Controller
                 ]
             );
 
+            $user = Users::firstOrCreate([
+                'phone' => $request->get('phone')
+                // 'created_at' => now()->format('Y-m-d H:i:s'),
+                // 'updated_at' => now()->format('Y-m-d H:i:s')
+            ]);
+
             SmsVerify::updateOrCreate(
-                ['phone' => $request->get('phone')], 
+                ['phone' => $user->phone], 
                 [
-                    'phone' => $request->get('phone'), 
+                    'phone' => $user->phone, 
                     'code' => $code, 
                     'created_at' => now()->format('Y-m-d H:i:s'),
                     'updated_at' => now()->format('Y-m-d H:i:s')

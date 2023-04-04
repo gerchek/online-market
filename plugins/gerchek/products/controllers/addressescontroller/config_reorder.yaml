@@ -1,0 +1,4 @@
+title: AddressesController
+modelClass: Gerchek\Products\Models\Addresses
+toolbar:
+    buttons: reorder_toolbar

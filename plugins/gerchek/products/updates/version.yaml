@@ -18,3 +18,12 @@
 1.0.7:
     - 'Created table gerchek_products_smsverify'
     - builder_table_create_gerchek_products_smsverify.php
+1.0.8:
+    - 'Created table gerchek_products_users'
+    - builder_table_create_gerchek_products_users.php
+1.0.9:
+    - 'Created table gerchek_products_addresses'
+    - builder_table_create_gerchek_products_addresses.php
+1.0.10:
+    - 'Updated table gerchek_products_addresses'
+    - builder_table_update_gerchek_products_addresses.php

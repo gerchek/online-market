@@ -5,18 +5,15 @@ use Model;
 /**
  * Model
  */
-class Category extends Model
+class Addresses extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-    protected $jsonable = ['images'];
-
-    protected $fillable = ['user_id'];
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'gerchek_products_categories';
+    public $table = 'gerchek_products_addresses';
 
     /**
      * @var array Validation rules
@@ -24,7 +21,7 @@ class Category extends Model
     public $rules = [
     ];
 
-    public $hasMany = [
-        'products' => 'Gerchek\Products\Models\Users'
+    public $belongsTo = [
+        'user' => 'Gerchek\Products\Models\Users'
     ];
 }

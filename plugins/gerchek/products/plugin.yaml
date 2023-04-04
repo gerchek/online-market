@@ -9,16 +9,28 @@ navigation:
         label: Products
         url: /
         icon: icon-shopping-cart
-        permissions:
-            - products
+        permissions: {  }
         sideMenu:
+            side-menu-item2:
+                label: Products
+                url: gerchek/products/productcontroller
+                icon: icon-shopping-cart
             side-menu-item:
                 label: Category
                 url: gerchek/products/categorycontroller
                 icon: icon-sitemap
+    main-menu-item2:
+        label: Buyers
+        url: gerchek/products/userscontroller
+        icon: icon-users
+        sideMenu:
             side-menu-item2:
-                label: Products
-                url: gerchek/products/productcontroller
+                label: Buyers
+                url: gerchek/products/userscontroller
+                icon: icon-users
+            side-menu-item:
+                label: Addresses
+                url: gerchek/products/addressescontroller
                 icon: icon-shopping-cart
 permissions:
     products:

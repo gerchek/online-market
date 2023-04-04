@@ -1,0 +1,12 @@
+fields:
+    address:
+        label: Addresses
+        size: ''
+        span: full
+        type: textarea
+    user:
+        label: Buyer
+        nameFrom: phone
+        descriptionFrom: description
+        span: auto
+        type: relation

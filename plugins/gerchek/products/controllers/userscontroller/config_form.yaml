@@ -1,0 +1,10 @@
+name: UsersController
+form: $/gerchek/products/models/users/fields.yaml
+modelClass: Gerchek\Products\Models\Users
+defaultRedirect: gerchek/products/userscontroller
+create:
+    redirect: 'gerchek/products/userscontroller/update/:id'
+    redirectClose: gerchek/products/userscontroller
+update:
+    redirect: gerchek/products/userscontroller
+    redirectClose: gerchek/products/userscontroller

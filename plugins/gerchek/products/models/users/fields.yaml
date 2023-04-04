@@ -1,0 +1,17 @@
+fields:
+    phone:
+        label: Phone
+        span: auto
+        type: text
+    addresses:
+        label: Addresses
+        prompt: 'Add new item'
+        style: default
+        span: auto
+        type: repeater
+        form:
+            fields:
+                address:
+                    label: Address
+                    span: auto
+                    type: text
