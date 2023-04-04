@@ -10,3 +10,6 @@ Route::resource('api/v1/products', 'AhmadFatoni\ApiGenerator\Controllers\API\Pro
 Route::get('api/v1/products/{id}/delete', ['as' => 'api/v1/products.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\ProductsController@destroy']);
 Route::resource('api/v1/farmers', 'AhmadFatoni\ApiGenerator\Controllers\API\FarmersController', ['except' => ['destroy', 'create', 'edit']]);
 Route::get('api/v1/farmers/{id}/delete', ['as' => 'api/v1/farmers.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\FarmersController@destroy']);
+
+Route::post('api/v1/sms/store', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@send']);
+Route::post('api/v1/sms/check', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@check']);
