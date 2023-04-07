@@ -15,6 +15,8 @@ class Products extends Model
      */
     public $table = 'gerchek_products_products';
 
+    protected $fillable = ['farmer_id'];
+
     /**
      * @var array Validation rules
      */
@@ -40,4 +42,5 @@ class Products extends Model
         'farmer' => 'RainLab\User\Models\User',
         'category' => 'Gerchek\Products\Models\Category'
     ];
+
 }

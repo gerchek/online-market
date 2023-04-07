@@ -31,6 +31,7 @@ class Users extends Model
             'key' => 'user_id',
             'otherKey' => 'id'
             // 'fieldName' => 'myFieldName'
-        ]
+        ],
+        'orders' => 'Gerchek\Products\Models\Orders'
     ];
 }

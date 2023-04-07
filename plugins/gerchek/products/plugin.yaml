@@ -32,6 +32,10 @@ navigation:
                 label: Addresses
                 url: gerchek/products/addressescontroller
                 icon: icon-shopping-cart
+            side-menu-item3:
+                label: Orders
+                url: gerchek/products/orderscontroller
+                icon: icon-bank
 permissions:
     products:
         tab: other

@@ -24,4 +24,8 @@ class Addresses extends Model
     public $belongsTo = [
         'user' => 'Gerchek\Products\Models\Users'
     ];
+
+    public $hasMany = [
+        'orders' => 'Gerchek\Products\Models\Orders'
+    ];
 }

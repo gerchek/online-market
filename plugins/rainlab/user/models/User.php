@@ -559,6 +559,7 @@ class User extends UserBase
     }
 
     public $hasMany = [
-        'products' => 'Gerchek\Products\Models\Products'
+        'products' => 'Gerchek\Products\Models\Products',
+        'orders' => 'Gerchek\Products\Models\Orders'
     ];
 }

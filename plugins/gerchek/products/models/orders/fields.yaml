@@ -1,0 +1,58 @@
+fields:
+    status:
+        label: Status
+        options:
+            new_order: 'Новый заказ'
+            order_is_going: 'Заказ собирается'
+            handed_over_for_delivery: 'Передано в доставку'
+            delivered: Доставлено
+            canceled: Отменено
+        span: auto
+        type: balloon-selector
+    price:
+        label: Price
+        span: auto
+        type: number
+    farmer:
+        label: Farmer
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    user:
+        label: Buyer
+        nameFrom: phone
+        descriptionFrom: description
+        span: auto
+        type: relation
+    address:
+        label: Address
+        nameFrom: address
+        descriptionFrom: description
+        span: auto
+        type: relation
+    someotherdata:
+        label: Someotherdata
+        span: auto
+        type: text
+tabs:
+    fields:
+        products_data:
+            label: Repeater
+            prompt: 'Add new item'
+            style: default
+            span: auto
+            type: repeater
+            tab: 'Tab 1'
+            form:
+                fields:
+                    products:
+                        label: products
+                        nameFrom: name
+                        descriptionFrom: description
+                        span: auto
+                        type: relation
+                    quantity:
+                        label: quantity
+                        span: auto
+                        type: number
