@@ -36,6 +36,10 @@ class User extends UserBase
      */
     public $belongsToMany = [
         'groups' => [UserGroup::class, 'table' => 'users_groups']
+        // 'orders' =>    [
+        //     'Gerchek\Products\Models\Products',
+        //     'table' => 'gerchek_products_orders_products'
+        // ]
     ];
 
     public $attachOne = [

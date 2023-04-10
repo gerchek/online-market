@@ -37,22 +37,10 @@ fields:
         type: text
 tabs:
     fields:
-        products_data:
-            label: Repeater
-            prompt: 'Add new item'
-            style: default
+        products:
+            label: Relation
+            nameFrom: name
+            descriptionFrom: description
             span: auto
-            type: repeater
+            type: relation
             tab: 'Tab 1'
-            form:
-                fields:
-                    products:
-                        label: products
-                        nameFrom: name
-                        descriptionFrom: description
-                        span: auto
-                        type: relation
-                    quantity:
-                        label: quantity
-                        span: auto
-                        type: number

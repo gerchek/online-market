@@ -15,3 +15,5 @@ Route::get('api/v1/addresses/{id}/delete', ['as' => 'api/v1/addresses.delete', '
 
 Route::post('api/v1/sms/store', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@send']);
 Route::post('api/v1/sms/check', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@check']);
+
+Route::get('api/v1/orderservice', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\OrderServiceController@getData']);

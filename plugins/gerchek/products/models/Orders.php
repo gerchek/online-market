@@ -27,11 +27,23 @@ class Orders extends Model
     public $belongsTo = [
         'farmer' => 'RainLab\User\Models\User',
         'user' => 'Gerchek\Products\Models\Users',
-        'address' => 'Gerchek\Products\Models\Addresses',
-        'products' =>    [
-            'Gerchek\Products\Models\Products',
-            'table' => 'gerchek_products_orders_products'
-        ] 
+        'address' => 'Gerchek\Products\Models\Addresses'
     ];
 
+
+    public $belongsToMany = [
+        'products' => [
+            \Gerchek\Products\Models\Products::class,
+            'table'    => 'gerchek_products_orders_products',
+            'key'      => 'orders_id',
+            'otherKey' => 'products_id'
+        ]
+    ];
+
+    // public function products()
+    // {
+    //     return $this->belongsToMany(\Gerchek\Products\Models\Products::class)->withPivot('quantity');
+    // }
 }
+
+

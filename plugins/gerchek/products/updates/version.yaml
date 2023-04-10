@@ -69,3 +69,12 @@
 1.0.24:
     - 'Updated table gerchek_products_orders'
     - builder_table_update_gerchek_products_orders_7.php
+1.0.25:
+    - 'Updated table gerchek_products_orders'
+    - builder_table_update_gerchek_products_orders_8.php
+1.0.26:
+    - 'Updated table gerchek_products_orders_products'
+    - builder_table_update_gerchek_products_orders_products_4.php
+1.0.27:
+    - 'Updated table gerchek_products_orders_products'
+    - builder_table_update_gerchek_products_orders_products_5.php
