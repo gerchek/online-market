@@ -27,7 +27,7 @@ class OrderDetail extends \Cms\Classes\ComponentBase
         $order_id = $this->param('order_id');
         $data = Orders::find($order_id);
 
-        dd($data->products);
+        // dd($data->products);
 
         $this->order = $data;
     }

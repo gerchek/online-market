@@ -5,19 +5,19 @@
             <div class="navbar-brand-box" style="background-color: #9397d1;">
                 <a href="{{ 'index'|page }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ 'assets/images/logo.png'|theme }}" alt="" height="22">
+                        <img src="{{ 'assets/images/logo2.png'|theme }}" alt="" height="22" style="height: 64px;">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ 'assets/images/logo.png'|theme }}" alt="" height="22" style="width: 185px;">
+                        <img src="{{ 'assets/images/logo2.png'|theme }}" alt="" height="22" style="height: 64px;">
                     </span>
                 </a>
 
-                <a href="{{ 'index'|page }}" class="logo logo-light">
+                <a href="{{ 'index'|page }}" class="logo logo-light" style="    display: flex;justify-content: center;">
                     <span class="logo-sm">
-                        <img src="{{ 'assets/images/logo.png'|theme }}" alt="" height="22">
+                        <img src="{{ 'assets/images/logo2.png'|theme }}" alt="" height="22" style="height: 64px;">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ 'assets/images/logo.png'|theme }}" alt="" height="22" style="width: 185px;">
+                        <img src="{{ 'assets/images/logo2.png'|theme }}" alt="" height="22" style="height: 64px;">
                     </span>
                 </a>
             </div>
@@ -36,20 +36,33 @@
 
                         <li>
                             <a href="{{ 'index'|page }}" class="waves-effect">
-                                <i class="ri-home-gear-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
-                                <span>Dashboard</span>
+                                <i class="ri-home-gear-line"></i>
+                                <span>Панель приборов</span>
                             </a>
                         </li>
 
-                        <li class="">
+                        <!-- <li class="">
                             <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
                                 <i class="ri-pencil-ruler-2-line"></i>
-                                <span>Products</span>
+                                <span>Продукты</span>
                             </a>
                             <ul class="sub-menu mm-collapse" aria-expanded="false" style="height: 0px;">
-                                <li><a href="{{ 'products'|page }}" aria-expanded="false">Products</a></li>
-                                <!-- <li class="mm-active"><a href="ui-buttons.html" aria-expanded="true">Buttons</a></li> -->
+                                <li><a href="{{ 'products'|page }}" aria-expanded="false">Продукты</a></li>
                             </ul>
+                        </li> -->
+
+                        <li>
+                            <a href="{{ 'products'|page }}" class="waves-effect">
+                                <i class="ri-home-gear-line"></i>
+                                <span>Продукты</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="{{ 'orders'|page }}" class="waves-effect">
+                                <i class="ri-home-gear-line"></i>
+                                <span>Заказы</span>
+                            </a>
                         </li>
 
                     </ul>

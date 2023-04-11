@@ -22,7 +22,7 @@ fields:
         span: left
         type: text
     manufacture:
-        label: manufacture
+        label: производство
         span: right
         type: text
     price:
@@ -34,11 +34,11 @@ fields:
         span: auto
         type: number
     on_discount:
-        label: skidka
+        label: скидка
         span: auto
         type: switch
     fresh:
-        label: fresh
+        label: свежий
         span: left
         type: switch
     farmer:
@@ -48,7 +48,7 @@ fields:
         span: auto
         type: relation
     category:
-        label: category_id
+        label: category
         nameFrom: name
         descriptionFrom: description
         span: right

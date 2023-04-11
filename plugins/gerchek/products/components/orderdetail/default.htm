@@ -10,7 +10,7 @@
     </div>
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">Buyer :</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Покупатель :</label>
         <div class="col-sm-10">
             <input class="form-control" type="text" placeholder="Name" name="name" value="{{ order.user.phone }}" disabled>
 
@@ -18,7 +18,7 @@
     </div>
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">Address :</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Адрес :</label>
         <div class="col-sm-10">
             <input class="form-control" type="text" placeholder="Name" name="name" value="{{ order.address.address }}" disabled>
 
@@ -26,7 +26,7 @@
     </div>
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">Someotherdata :</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Время :</label>
         <div class="col-sm-10">
             <input class="form-control" type="text" placeholder="Name" name="name" value="{{ order.someotherdata }}" disabled>
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">О товаре :</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Положение :</label>
         <div class="col-sm-10">
             <div class="d-flex flex-wrap gap-2">
                 
@@ -64,57 +64,23 @@
     </div>
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">О товаре :</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Продукты на заказ :</label>
         <div class="col-sm-10">
             <div class="accordion" id="accordionExample">
+                {% for data in order.products%}
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            {{ order.products_data }}
+                            {{ data.name }}
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                            plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                            custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                            within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            {{ data.description }}
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
-                            plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                            custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                            within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
-                            plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                            appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                            custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                            within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
         </div>

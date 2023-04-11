@@ -38,9 +38,9 @@ fields:
 tabs:
     fields:
         products:
-            label: Relation
+            label: Products
             nameFrom: name
             descriptionFrom: description
             span: auto
             type: relation
-            tab: 'Tab 1'
+            tab: Products

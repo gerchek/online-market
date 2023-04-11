@@ -1,7 +1,7 @@
 {% set userId = __SELF__.userId %}
 {% set product = __SELF__.product %}
 <form  data-request="onUpdate" class="online_form" enctype="multipart/form-data" data-request-files data-request-validate data-request-flash>
-    <h4 class="card-title">Update product</h4>
+    <h4 class="card-title">Обновить продукт</h4>
 
     <div class="row mb-3">
         <label for="example-text-input" class="col-sm-2 col-form-label">имя :</label>
@@ -57,11 +57,11 @@
     </div>
 
     <div class="row mb-3" style="    display: flex;flex-wrap: nowrap;">
-        <label class="col-sm-2 col-form-label">Add new images</label>
+        <label class="col-sm-2 col-form-label">Добавить новые изображения</label>
         <div class="upload__box">
             <div class="upload__btn-box">
               <label class="upload__btn">
-                <p>Upload images</p>
+                <p>Загрузить изображения</p>
                 <input type="file" multiple="" data-max_length="20" class="upload__inputfile" name="images[]">
               </label>
             </div>
@@ -108,5 +108,5 @@
     
 
 
-    <button type="submit" class="btn btn-success waves-effect waves-light">Create</button>
+    <button type="submit" class="btn btn-success waves-effect waves-light">Обновить</button>
 </form>
