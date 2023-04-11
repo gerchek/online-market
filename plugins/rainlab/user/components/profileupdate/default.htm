@@ -1,6 +1,6 @@
 {% set userData = __SELF__.userData %}
 <form  data-request="onProfileUpdate" class="online_form" enctype="multipart/form-data" data-request-files data-request-validate data-request-flash>
-    <h4 class="card-title">Update user profile</h4>
+    <h4 class="card-title">Обновить профиль пользователя</h4>
     <div class="row mb-3">
         <label for="example-text-input" class="col-sm-2 col-form-label">имя :</label>
         <div class="col-sm-10">
@@ -52,20 +52,20 @@
     </div> -->
 
     <div class="row mb-3">
-        <label for="example-text-input" class="col-sm-2 col-form-label">Avatar for profile</label>
+        <label for="example-text-input" class="col-sm-2 col-form-label">Аватар для профиля</label>
         <div class="file-upload">
             <!-- <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button> -->
           
             <div class="image-upload-wrap">
               <input class="file-upload-input" name="avatar" type='file' onchange="readURL(this);" accept="image/*" />
               <div class="drag-text">
-                <h3>Drag and drop a file or select add Image</h3>
+                <h3>Перетащите файл или выберите «Добавить изображение».</h3>
               </div>
             </div>
             <div class="file-upload-content">
               <img class="file-upload-image" src="#" alt="your image" />
               <div class="image-title-wrap">
-                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Загруженное изображение</span></button>
               </div>
             </div>
           </div>
@@ -76,5 +76,5 @@
     
 
 
-    <button type="submit" class="btn btn-success waves-effect waves-light">Create</button>
+    <button type="submit" class="btn btn-success waves-effect waves-light">Обновить</button>
 </form>
