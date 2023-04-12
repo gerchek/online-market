@@ -1,3 +1,19 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $user = Auth::getUser();
+    
+
+
+
+    if ($user) {
+        $this['avatarPath'] = $user->getAvatarThumb(100, 100);
+    }
+}
+?>
+==
 <header id="page-topbar" style="background-color: #9397d1;">
             <div class="navbar-header">
                 <div class="d-flex">
@@ -56,9 +72,13 @@
                         </div>
                     </div>
 
-                    <a href="{{ 'profile'|page }}">
+                    <a href="{{ 'profile'|page }}" style="
+                    display: flex;
+                    /* align-content: center; */
+                    align-items: center;
+                ">
                         <div class="dropdown d-inline-block user-dropdown">
-                                <img class="rounded-circle header-profile-user" src="{{ 'assets/images/users/avatar-2.jpg'|theme }}" alt="Header Avatar">
+                                <img class="rounded-circle header-profile-user" src="{{ avatarPath }}" alt="Header Avatar">
                         </div>
                     </a>
                 </div>

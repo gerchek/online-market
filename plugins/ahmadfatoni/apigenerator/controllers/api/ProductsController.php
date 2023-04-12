@@ -4,9 +4,11 @@ use Cms\Classes\Controller;
 use BackendMenu;
 
 use Illuminate\Http\Request;
-use AhmadFatoni\ApiGenerator\Helpers\Helpers;
+use AhmadFatoni\ApiGenerator\Helpers\Helpers; 
 use Illuminate\Support\Facades\Validator;
 use Gerchek\Products\Models\Products;
+use Input;
+
 class ProductsController extends Controller
 {
 	protected $Products;
@@ -21,11 +23,17 @@ class ProductsController extends Controller
     }
 
     public function index(){
+        $farmerid = \Request::get('farmerid');
+        if ($farmerid) {
+            // dd($farmerid);
+            $data = $this->Products->with(['images'])->where('farmer_id',$farmerid)->get()->toArray();
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        }else{
+            $data = $this->Products->with(['images'])->get()->toArray();
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        }
 
-        $data = $this->Products->with(['images'])->get()->toArray();
-        // $data = $this->Products->all()->toArray();
-
-        return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        
     }
 
     public function show($id){
