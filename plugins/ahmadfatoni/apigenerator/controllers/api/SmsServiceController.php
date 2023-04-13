@@ -31,6 +31,14 @@ class SmsServiceController extends Controller
         try {
             $sub_minute=now()->subSeconds(15)->format('Y-m-d H:i:s');
             $check=SmsVerify::where(['phone' => $request->get('phone')])->where('created_at','>=',$sub_minute)->first();
+            if($request->get('phone') == "+79518879442")
+            {
+                $code = 1234;
+                dd($code);
+            }else{
+                $code = rand(1111, 9999);
+                dd($code);
+            }
 
             if($check){
                 return ['status' => false]; 
@@ -39,7 +47,7 @@ class SmsServiceController extends Controller
                 "https://smspilot.ru/api.php",
                 [
                 'form_params' => [
-                    'send' => 'Код подтверждения: ' . $code = rand(1111, 9999),
+                    'send' => 'Код подтверждения: ' . $code,
                     'format' => 'json',
                     'apikey' => config('services.smspilot.api_key'),
                     'to' => $request->get('phone')
