@@ -34,10 +34,10 @@ class SmsServiceController extends Controller
             if($request->get('phone') == "+79518879442")
             {
                 $code = 1234;
-                dd($code);
+                // dd($code);
             }else{
                 $code = rand(1111, 9999);
-                dd($code);
+                // dd($code);
             }
 
             if($check){
