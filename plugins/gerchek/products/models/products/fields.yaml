@@ -53,3 +53,15 @@ fields:
         descriptionFrom: description
         span: right
         type: relation
+    storage_conditions:
+        label: 'условия хранения'
+        span: auto
+        type: text
+    best_before_date:
+        label: 'срок годности'
+        span: auto
+        type: text
+    package:
+        label: упаковка
+        span: auto
+        type: text

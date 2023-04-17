@@ -1,5 +1,8 @@
 {% set userId = __SELF__.userId %}
 <div class="card-body">
+    <div>
+        <a href="{{ 'category-create'|page }}" class="btn btn-success mb-2"><i class="mdi mdi-plus me-2"></i> Добавить категория</a>
+    </div>
     <div class="table-responsive mt-3">
         <table class="table table-centered datatable dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
             <thead class="thead-light">
@@ -11,15 +14,12 @@
                         </div>
                     </th>
                     <th>имя</th>
-                    <th>цена</th>
-                    <th>телефон покупателя</th>
-                    <th>время</th>
                     <th>создан в</th>
-                    <th style="width: 120px;">Действие</th> 
+                    <th style="width: 120px;">Действие</th>
                 </tr>
             </thead>
             <tbody>
-                {% for data in orders %}
+                {% for category in categories %}
                 <tr>
                     <td>
                         <div class="form-check">
@@ -28,17 +28,20 @@
                         </div>
                     </td>
                     
-                    <td>{{ data.id }}</td>
-                    <td>{{ data.price }}</td>
-                    <td>{{ data.user.phone }}</td>
-                    <td>{{ data.delivery_time }}</td>
-                    
-                    
+                    <td>{{ category.name }}</td>
                     <td>
-                        {{ data.created_at }}
+                        {{ category.created_at }}
                     </td>
                     <td id="tooltip-container1">
-                        <a href="{{ 'order-detail'|page({ order_id: data.id }) }}" class="btn btn-info waves-effect waves-light"title="View">Вид</a>
+                        <a href="{{ 'category_update'|page({ category_id: category.id }) }}" class="btn btn-primary waves-effect waves-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">Редактировать</a>
+                        <button
+                            class="btn btn-danger"
+                            data-request="onDelete"
+                            data-request-data="id: {{ category.id }}"
+                            data-confirm="Are you sure you want to delete this product?"
+                        >
+                        Удалить
+                        </button>
                     </td>
                 </tr>
                 {% endfor %}

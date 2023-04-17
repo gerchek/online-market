@@ -12,7 +12,10 @@ class Plugin extends PluginBase
             \Gerchek\Products\Components\Products::class => 'Products',
             \Gerchek\Products\Components\ProductDetail::class => 'ProductDetail',
             \Gerchek\Products\Components\Orders::class => 'Orders',
-            \Gerchek\Products\Components\OrderDetail::class => 'OrderDetail'
+            \Gerchek\Products\Components\OrderDetail::class => 'OrderDetail',
+            \Gerchek\Products\Components\Categories::class => 'Categories',
+            \Gerchek\Products\Components\CategoryCreate::class => 'categoryCreate',
+            \Gerchek\Products\Components\CategoryUpdate::class => 'categoryUpdate'
         ];
     }
 

@@ -31,10 +31,19 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
-    someotherdata:
-        label: Someotherdata
+    delivery_time:
+        label: 'Delivery time'
         span: auto
         type: text
+    phone:
+        label: Phone
+        span: auto
+        type: text
+    comment:
+        label: Comment
+        size: small
+        span: auto
+        type: textarea
 tabs:
     fields:
         products:

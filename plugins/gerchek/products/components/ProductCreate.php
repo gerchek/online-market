@@ -26,7 +26,7 @@ class ProductCreate extends \Cms\Classes\ComponentBase
     {
         $user = \Auth::getUser();
         $this->userId = $user->id;
-        $this->page['data'] = Category::all();
+        $this->page['data'] = Category::where('farmer_id',$this->userId)->get();
     }
 
     public function onSend()

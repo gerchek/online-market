@@ -78,3 +78,24 @@
 1.0.27:
     - 'Updated table gerchek_products_orders_products'
     - builder_table_update_gerchek_products_orders_products_5.php
+1.0.28:
+    - 'Updated table gerchek_products_orders'
+    - builder_table_update_gerchek_products_orders_9.php
+1.0.29:
+    - 'Updated table gerchek_products_categories'
+    - builder_table_update_gerchek_products_categories.php
+1.0.30:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_6.php
+1.0.31:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_7.php
+1.0.32:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_8.php
+1.0.33:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_9.php
+1.0.34:
+    - 'Updated table gerchek_products_products'
+    - builder_table_update_gerchek_products_products_10.php

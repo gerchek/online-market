@@ -12,6 +12,8 @@ Route::resource('api/v1/farmers', 'AhmadFatoni\ApiGenerator\Controllers\API\Farm
 Route::get('api/v1/farmers/{id}/delete', ['as' => 'api/v1/farmers.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\FarmersController@destroy']);
 Route::resource('api/v1/addresses', 'AhmadFatoni\ApiGenerator\Controllers\API\AddressesController', ['except' => ['destroy', 'create', 'edit']]);
 Route::get('api/v1/addresses/{id}/delete', ['as' => 'api/v1/addresses.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\AddressesController@destroy']);
+Route::resource('api/v1/orders', 'AhmadFatoni\ApiGenerator\Controllers\API\OrdersController', ['except' => ['destroy', 'create', 'edit']]);
+Route::get('api/v1/orders/{id}/delete', ['as' => 'api/v1/orders.delete', 'uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\OrdersController@destroy']);
 
 Route::post('api/v1/sms/store', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@send']);
 Route::post('api/v1/sms/check', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@check']);

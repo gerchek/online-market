@@ -27,4 +27,8 @@ class Category extends Model
     public $hasMany = [
         'products' => 'Gerchek\Products\Models\Users'
     ];
+
+    public $belongsTo = [
+        'farmer' => 'RainLab\User\Models\User'
+    ];
 }

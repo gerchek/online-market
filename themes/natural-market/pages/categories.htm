@@ -1,0 +1,20 @@
+title = "categories"
+url = "/categories"
+layout = "site-layout"
+
+[Categories]
+==
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            {% component 'Categories' %}
+        </div>
+    </div>
+</div>
+        {% put scripts %}
+            <script src="{{ 'assets/libs/datatables.net/js/jquery.dataTables.min.js'|theme }}"></script>
+            <script src="{{ 'assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js'|theme }}"></script>
+            <script src="{{ 'assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js'|theme }}"></script>
+            <script src="{{ 'assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js'|theme }}"></script>
+            <script src="{{ 'assets/js/pages/ecommerce-datatables.init.js'|theme }}"></script>
+        {% endput %}

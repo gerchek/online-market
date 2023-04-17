@@ -3,3 +3,9 @@ fields:
         label: 'Category name'
         span: auto
         type: text
+    farmer:
+        label: Farmer
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

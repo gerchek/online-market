@@ -20,9 +20,11 @@ class OrderServiceController extends Controller
         $orders = $data['orders']; // array
 
         $address_id = $data['address_id'];
-        $someotherdata = $data['someotherdata'];
+        $delivery_time = $data['delivery_time'];
         $status = $data['status'];
         $user_id = $data['user_id'];
+        $phone = $data['phone'];
+        $comment = $data['comment'];
 
 
         $count = count($orders);
@@ -33,7 +35,9 @@ class OrderServiceController extends Controller
             $order->status = $status;
             $order->user_id = $user_id;
             $order->address_id = $address_id;
-            $order->someotherdata = $someotherdata;
+            $order->delivery_time = $delivery_time;
+            $order->phone = $phone;
+            $order->comment = $comment;
             $order->farmer_id = $orders[$i]['farmer_id'];
             $order->price = $orders[$i]['price'];
 

@@ -1,0 +1,17 @@
+{% set category = __SELF__.category %}
+<form  data-request="onCategoryUpdate" class="online_form" enctype="multipart/form-data" data-request-files data-request-validate data-request-flash>
+    <h4 class="card-title">Обновить продукт</h4>
+
+    <div class="row mb-3">
+        <label for="example-text-input" class="col-sm-2 col-form-label">имя :</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" placeholder="Name" name="name" value="{{ category.name }}">
+
+        </div>
+    </div>
+
+    <input type="hidden" value="{{ category.id }}" name="id">
+
+
+    <button type="submit" class="btn btn-success waves-effect waves-light">Обновить</button>
+</form>
