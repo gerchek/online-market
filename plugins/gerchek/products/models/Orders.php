@@ -11,12 +11,17 @@ class Orders extends Model
     
     protected $jsonable = ['products_data'];
 
-    // protected $fillable = ['farmer_id'];
+    // protected $fillable = ['orders_id','products_id','quantity'];
 
     /**
      * @var string The database table used by the model.
      */
     public $table = 'gerchek_products_orders';
+
+    // public function products()
+    // {
+    //     return $this->belongsToMany(Products::class)->withPivot('quantity');
+    // }
 
     /**
      * @var array Validation rules
@@ -31,19 +36,20 @@ class Orders extends Model
     ];
 
 
-    public $belongsToMany = [
-        'products' => [
-            \Gerchek\Products\Models\Products::class,
-            'table'    => 'gerchek_products_orders_products',
-            'key'      => 'orders_id',
-            'otherKey' => 'products_id'
-        ]
-    ];
+    // public $belongsToMany = [
+    //     'products' => [
+    //         \Gerchek\Products\Models\Products::class,
+    //         'table'    => 'gerchek_products_orders_products',
+    //         'key'      => 'orders_id',
+    //         'otherKey' => 'products_id'
+    //     ]
+    // ];
 
-    // public function products()
-    // {
-    //     return $this->belongsToMany(\Gerchek\Products\Models\Products::class)->withPivot('quantity');
-    // }
+    public function products()
+    {
+        return $this->belongsToMany(\Gerchek\Products\Models\Products::class, 'gerchek_products_orders_products', 'orders_id', 'products_id')->withPivot('quantity');
+    }
+
 }
 
 

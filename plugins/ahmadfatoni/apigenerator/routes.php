@@ -19,3 +19,5 @@ Route::post('api/v1/sms/store', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers
 Route::post('api/v1/sms/check', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\SmsServiceController@check']);
 
 Route::get('api/v1/orderservice', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\OrderServiceController@getData']);
+Route::get('api/v1/orderdetail', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\OrderServiceController@orderDetail']);
+Route::post('api/v1/listProducts', ['uses' => 'AhmadFatoni\ApiGenerator\Controllers\API\ProductsHelperController@listProducts']);

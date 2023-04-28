@@ -12,6 +12,17 @@ use GuzzleHttp\Client;
 class OrderServiceController extends Controller
 {
 
+    protected $Orders;
+
+    protected $helpers;
+
+    public function __construct(Orders $Orders, Helpers $helpers)
+    {
+        parent::__construct();
+        $this->Orders    = $Orders;
+        $this->helpers          = $helpers;
+    }
+
     public function getData(Request $request)
     {
         // Get the JSON data from the request body
@@ -60,6 +71,22 @@ class OrderServiceController extends Controller
         return response()->json(['message' => 'Data received successfully']);
     }
 
+
+    public function orderDetail(Request $request)
+    {
+        // dd("hi");
+        $order = new Orders;
+        $order_id = \Request::get('order_id');
+        if ($order_id) {
+            // dd($farmerid);
+            $data = $this->Orders->where('id',$order_id)->with('products')->get()->toArray();
+            // dd($data[0]["products"][0]["pivot"]);
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        }else{
+            $data = $this->Orders->get()->toArray();
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        }
+    }
 
     public static function getAfterFilters() {return [];}
     public static function getBeforeFilters() {return [];}
