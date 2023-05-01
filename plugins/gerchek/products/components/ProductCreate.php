@@ -59,6 +59,9 @@ class ProductCreate extends \Cms\Classes\ComponentBase
         //  'on_discount' => 'required',
         //  'fresh' => 'required',
          'user_id' => 'required',
+         'storage_conditions' => 'required',
+         'best_before_date' => 'required',
+         'package' => 'required',
     ];
 
     $validation = \Validator::make($data, $rules);
@@ -79,6 +82,9 @@ class ProductCreate extends \Cms\Classes\ComponentBase
          $fresh = $Products->fresh =$_POST['fresh'];
          $images = $Products->images =Input::file('images');
         $farmer_id = $Products->farmer_id =Input::get('user_id'); 
+        $storage_conditions = $Products->storage_conditions =Input::get('storage_conditions'); 
+        $best_before_date = $Products->best_before_date =Input::get('best_before_date'); 
+        $package = $Products->package =Input::get('package'); 
 
         $Products->save();
 

@@ -34,7 +34,7 @@ class ProductUpdate extends \Cms\Classes\ComponentBase
         // dd($productmodel->images);
         $user = \Auth::getUser();
         $this->userId = $user->id;
-        $this->page['data'] = Category::all();
+        $this->page['data'] = Category::where('farmer_id',$this->userId)->get();
     }
 
     public function onUpdate()
@@ -68,6 +68,9 @@ class ProductUpdate extends \Cms\Classes\ComponentBase
         // 'on_discount' => 'required',
         // 'fresh' => 'required',
         'user_id' => 'required',
+        'storage_conditions' => 'required',
+        'best_before_date' => 'required',
+        'package' => 'required',
     ];
 
     $validation = \Validator::make($data, $rules);
@@ -91,6 +94,11 @@ class ProductUpdate extends \Cms\Classes\ComponentBase
         } 
         $Products->images =Input::file('images');
         $Products->farmer_id =Input::get('user_id'); 
+
+        $Products->storage_conditions =Input::get('storage_conditions'); 
+        $Products->best_before_date =Input::get('best_before_date'); 
+        $Products->package =Input::get('package'); 
+
         $Products->save();
         return \Redirect::to('/');
     }

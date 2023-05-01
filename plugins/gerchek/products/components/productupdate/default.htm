@@ -104,6 +104,32 @@
         </div>
     </div>
 
+
+    <div class="row mb-3">
+        <label for="example-text-input" class="col-sm-2 col-form-label">Условия хранения</label>
+        <div class="col-sm-10">
+            <textarea required="" class="form-control" rows="2" name="storage_conditions">{{ product.storage_conditions }}</textarea>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="example-text-input" class="col-sm-2 col-form-label">Срок годности</label>
+        <div class="col-sm-10">
+            <textarea required="" class="form-control" rows="2" name="best_before_date">{{ product.best_before_date }}</textarea>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label for="example-text-input" class="col-sm-2 col-form-label">Упаковка</label>
+        <div class="col-sm-10">
+            <textarea required="" class="form-control" rows="2" name="package">{{ product.package }}</textarea>
+
+        </div>
+    </div>
+
+
     <input type="hidden" value="{{ userId }}" name="user_id">
     
 

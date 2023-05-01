@@ -90,6 +90,18 @@
                                     <th scope="row" style="width: 400px;">Категория</th>
                                     <td>{{ product[0].category.name }}</td>
                                 </tr>
+                                <tr>
+                                    <th scope="row" style="width: 400px;">Условия хранения</th>
+                                    <td>{{ product[0].storage_conditions }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="width: 400px;">Срок годности</th>
+                                    <td>{{ product[0].best_before_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" style="width: 400px;">Упаковка</th>
+                                    <td>{{ product[0].package }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
