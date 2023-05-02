@@ -6,7 +6,7 @@ plugin:
     homepage: ''
 navigation:
     api-generator:
-        label: 'API Generator'
+        label: 'Генератор API'
         url: ahmadfatoni/apigenerator/apigeneratorcontroller
         icon: icon-cogs
         permissions:
