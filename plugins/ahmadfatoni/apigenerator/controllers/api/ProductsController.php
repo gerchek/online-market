@@ -24,11 +24,17 @@ class ProductsController extends Controller
 
     public function index(){
         $farmerid = \Request::get('farmerid');
+        $categoryId = \Request::get('categoryId');
         if ($farmerid) {
             // dd($farmerid);
             $data = $this->Products->with(['images'])->where('farmer_id',$farmerid)->get()->toArray();
             return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
-        }else{
+        }elseif($categoryId){
+            $data = $this->Products->with(['images'])->where('category_id',$categoryId)->get()->toArray();
+            return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
+        }
+        else
+        {
             $data = $this->Products->with(['images'])->get()->toArray();
             return $this->helpers->apiArrayResponseBuilder(200, 'success', $data);
         }
