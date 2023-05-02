@@ -1,7 +1,7 @@
 uuid: 3328c303-7989-462e-b866-27e7037ba275
 handle: Blog\Config
 type: global
-name: Blog Settings
+name: Настройки блога
 
 navigation:
     parent: Blog\Post

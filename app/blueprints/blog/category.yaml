@@ -1,7 +1,7 @@
 uuid: b022a74b-15e6-4c6b-9eb9-17efc5103543
 type: structure
 handle: Blog\Category
-name: Category
+name: Категория
 drafts: false
 
 structure:

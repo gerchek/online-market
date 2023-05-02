@@ -1,7 +1,7 @@
 uuid: 339b11b7-69ad-43c4-9be1-6953e7738827
 handle: Wiki\Article
 type: structure
-name: Article
+name: Статья
 drafts: true
 
 structure:

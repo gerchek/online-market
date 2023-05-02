@@ -2,7 +2,7 @@
 
 return [
     'plugin' => [
-        'name' => 'Builder',
+        'name' => 'Строитель',
         'description' => 'Provides visual tools for building October plugins.',
         'add' => 'Create plugin',
         'no_records' => 'No plugins found',

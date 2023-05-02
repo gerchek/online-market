@@ -6,34 +6,34 @@ plugin:
     homepage: ''
 navigation:
     main-menu-item:
-        label: Products
+        label: Продукты
         url: /
         icon: icon-shopping-cart
         permissions: {  }
         sideMenu:
             side-menu-item2:
-                label: Products
+                label: Продукты
                 url: gerchek/products/productcontroller
                 icon: icon-shopping-cart
             side-menu-item:
-                label: Category
+                label: Категория
                 url: gerchek/products/categorycontroller
                 icon: icon-sitemap
     main-menu-item2:
-        label: Buyers
+        label: Покупатели
         url: gerchek/products/userscontroller
         icon: icon-users
         sideMenu:
             side-menu-item2:
-                label: Buyers
+                label: Покупатели
                 url: gerchek/products/userscontroller
                 icon: icon-users
             side-menu-item:
-                label: Addresses
+                label: Адреса
                 url: gerchek/products/addressescontroller
                 icon: icon-shopping-cart
             side-menu-item3:
-                label: Orders
+                label: Заказы
                 url: gerchek/products/orderscontroller
                 icon: icon-bank
 permissions:

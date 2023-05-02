@@ -1,11 +1,11 @@
 uuid: edcd102e-0525-4e4d-b07e-633ae6c18db6
 handle: Blog\Post
 type: stream
-name: Post
+name: Почта
 drafts: true
 
 primaryNavigation:
-    label: Blog
+    label: Блог
     icon: octo-icon-file
     iconSvg: modules/tailor/assets/images/blog-icon.svg
     order: 95
